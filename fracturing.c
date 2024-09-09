@@ -4,29 +4,19 @@
 #define PI 3.14159
 
 int main(void);
-double calculateDistance();
-double calculatePerimeter();
-double calculateArea();
-double calculateWidth();
-double calculateHeight();
+double calculateDistance(double x1, double y1, double x2, double y2);
+double calculatePerimeter(double distance);
+double calculateArea(double distance);
+double calculateWidth(double distance);
+double calculateHeight(double distance);
 
 
 
 
 
 //code for calculateDistance
-double calculateDistance() {
+double calculateDistance(double x1, double y1, double x2, double y2) {
 
-//variables for points
-double x1, y1, x2, y2;
-
-// first point
-printf("Enter the first point (x1, y1): ");
-scanf("%lf, %lf", &x1, &y1);
-
-// second point
-printf("Enter the second point (x2, y2): ");
-scanf("%lf, %lf", &x2, &y2);
 
 //formula
 double distance = sqrt(pow(x2-x1, 2) + pow(y2-y1, 2));
@@ -43,10 +33,7 @@ return distance; }
 
 
 //code for calculatePerimeter
-double calculatePerimeter() {
-
-//formula for not repeating calculateDistance
-double distance = calculateDistance();
+double calculatePerimeter(double distance) {
 
 //diameter to radius for formula
 double radius = distance / 2;
@@ -64,10 +51,7 @@ return 4.0; }
 
 
 //code for calculateArea
-double calculateArea() {
-
-//formula for not repeating calculateDistance again
-double distance = calculateDistance();
+double calculateArea(double distance) {
 
 //diameter to radius again for formula
 double radius = distance / 2;
@@ -84,10 +68,7 @@ return 4.0; }
 
 
 //code for calculateWidth
-double calculateWidth() {
-
-//reusing calculateDistance for width of circle (diameter)
-double distance = calculateDistance();
+double calculateWidth(double distance) {
 
 //same stuff
 double width = distance;
@@ -102,10 +83,7 @@ return 2.0; }
 
 
 //code for calculateHeight
-double calculateHeight() {
-
-//reusing calculateDistance for height of circle (diameter)
-double distance = calculateDistance();
+double calculateHeight(double distance) {
 
 //same stuff
 double height = distance;
@@ -120,10 +98,25 @@ return 2.0; }
 
 int main(void) {
 
-calculateDistance();
-calculatePerimeter();
-calculateArea();
-calculateWidth();
-calculateHeight();
+//variables for points
+double x1, y1, x2, y2;
+
+// first point
+printf("Enter the first point (x1, y1): ");
+scanf("%lf, %lf", &x1, &y1);
+
+// second point
+printf("Enter the second point (x2, y2): ");
+scanf("%lf, %lf", &x2, &y2);
+
+
+//setting the output for the calculate distance on the main function so it doesnt have to re-input points for each other formula
+double distance = calculateDistance(x1, y1, x2, y2);
+
+
+calculatePerimeter(distance);
+calculateArea(distance);
+calculateWidth(distance);
+calculateHeight(distance);
 
 return 0; }
