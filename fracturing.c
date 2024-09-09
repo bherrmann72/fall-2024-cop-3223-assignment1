@@ -58,7 +58,7 @@ double perimeter = 2 * PI * radius;
 printf("The perimeter of the city encompassed by your request is %f\n", perimeter);
 
 //difficulty
-return 4; }
+return 4.0; }
 
 
 
@@ -79,7 +79,7 @@ double area = PI * pow(radius, 2);
 printf("The area of the city encompassed by your request is %f\n", area);
 
 //difficulty
-return 4; }
+return 4.0; }
 
 
 
@@ -96,7 +96,7 @@ double width = distance;
 printf("The width of the city encompassed by your request is %f\n", width);
 
 //difficulty
-return 2; }
+return 2.0; }
 
 
 
@@ -114,7 +114,7 @@ double height = distance;
 printf("The height of the city encompassed by your request is %f\n", height);
 
 //difficulty
-return 2; }
+return 2.0; }
 
 
 
