@@ -11,7 +11,30 @@ double calculateWidth(double distance);
 double calculateHeight(double distance);
 
 
+int main(void) {
 
+//variables for points
+double x1, y1, x2, y2;
+
+// first point
+printf("Enter the first point (x1, y1): ");
+scanf("%lf, %lf", &x1, &y1);
+
+// second point
+printf("Enter the second point (x2, y2): ");
+scanf("%lf, %lf", &x2, &y2);
+
+
+//setting the output for the calculate distance on the main function so it doesnt have to re-input points for each other formula
+double distance = calculateDistance(x1, y1, x2, y2);
+
+//calling other functions
+calculatePerimeter(distance);
+calculateArea(distance);
+calculateWidth(distance);
+calculateHeight(distance);
+
+return 0; }
 
 
 //code for calculateDistance
@@ -93,30 +116,3 @@ printf("The height of the city encompassed by your request is %f\n", height);
 
 //difficulty
 return 2.0; }
-
-
-
-int main(void) {
-
-//variables for points
-double x1, y1, x2, y2;
-
-// first point
-printf("Enter the first point (x1, y1): ");
-scanf("%lf, %lf", &x1, &y1);
-
-// second point
-printf("Enter the second point (x2, y2): ");
-scanf("%lf, %lf", &x2, &y2);
-
-
-//setting the output for the calculate distance on the main function so it doesnt have to re-input points for each other formula
-double distance = calculateDistance(x1, y1, x2, y2);
-
-
-calculatePerimeter(distance);
-calculateArea(distance);
-calculateWidth(distance);
-calculateHeight(distance);
-
-return 0; }
